@@ -1,0 +1,36 @@
+name: Daily Build Commit
+
+on:
+  schedule:
+    # Runs once a day at 09:00 UTC
+    - cron: '0 9 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  commit-next-chunk:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Apply next queued chunk
+        run: python3 .commit-queue/apply_next.py
+
+      - name: Commit and push
+        run: |
+          STATUS=$(cat /tmp/commit_status.txt)
+          if [ "$STATUS" = "skip" ]; then
+            echo "Nothing left to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          MSG=$(cat /tmp/commit_message.txt)
+          git commit -m "$MSG"
+          git push origin HEAD:main

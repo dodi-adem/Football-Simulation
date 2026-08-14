@@ -1,0 +1,58 @@
+[
+  {
+    "chunk": "01",
+    "message": "Initialize project: structure and README"
+  },
+  {
+    "chunk": "02",
+    "message": "Add custom exception hierarchy"
+  },
+  {
+    "chunk": "03",
+    "message": "Add core domain models: Player, Team, Tactic, Position"
+  },
+  {
+    "chunk": "04",
+    "message": "Add player rating calculators and match result model"
+  },
+  {
+    "chunk": "05",
+    "message": "Add utilities: RNG, preset teams, simulation config"
+  },
+  {
+    "chunk": "06",
+    "message": "Add core match event types"
+  },
+  {
+    "chunk": "07",
+    "message": "Add penalty, offside, and substitution events"
+  },
+  {
+    "chunk": "08",
+    "message": "Add rule engine core: MatchRule, DynamicRule, RuleEngine"
+  },
+  {
+    "chunk": "09",
+    "message": "Add rule triggers, actions, and concrete match rules"
+  },
+  {
+    "chunk": "10",
+    "message": "Add services: probability, team strength, player selection"
+  },
+  {
+    "chunk": "11",
+    "message": "Add match simulation engine (part 1): context and event generators"
+  },
+  {
+    "chunk": "12",
+    "message": "Add match simulation engine (part 2): card, penalty, offside, simulator"
+  },
+  {
+    "chunk": "13",
+    "message": "Add application layer: orchestrators and UI builders"
+  },
+  {
+    "chunk": "14",
+    "message": "Add application entry point"
+  }
+]
